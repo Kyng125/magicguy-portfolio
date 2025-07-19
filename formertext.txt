@@ -1,0 +1,347 @@
+"use client";
+
+import React, { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
+import Image from "next/image";
+import Link from "next/link";
+import Navbar from "../components/Navbar";
+import Modal from "../components/Modal";
+import VideoSection from "../components/VideoSection";
+import BlinkingArrow from "../components/BlinkingArrow";
+
+const Home = () => {
+  const [isPortfolioModalVisible, setIsPortfolioModalVisible] = useState(false);
+  const [isServicesModalVisible, setIsServicesModalVisible] = useState(false);
+  const router = useRouter();
+
+  const handleContactClick = () => {
+    router.push("/home/contact");
+  };
+
+  const handleServicesClick = () => {
+    setIsServicesModalVisible(true);
+    setIsPortfolioModalVisible(false);
+    console.log(isServicesModalVisible);
+  };
+
+  const handlePortfolioClick = () => {
+    setIsPortfolioModalVisible(true);
+    setIsServicesModalVisible(false);
+    console.log(isPortfolioModalVisible);
+  };
+
+  const handleXClick = () => {
+    throw new Error("Function not implemented.");
+  };
+
+  return (
+    <div className="min-h-screen w-fit h-full p-5 bg-amber relative">
+      <header className="">
+        <Navbar />
+      </header>
+      <BlinkingArrow />
+      <div className=" flex justify-center mt-20 mb-2">
+        <div className=" flex flex-col items-center m-5">
+          <h2 className="m-5 text-gray-400 text-sm">
+            |--- Artist. Commissions are open | Silliest goose of all silly
+            geese | The autism scares the hoes ---|
+          </h2>
+          {/* <VideoSection /> */}
+          <Image
+            src="/image5.jpg"
+            alt="Lulu"
+            width={500}
+            height={25}
+            priority
+            className="transition-transform duration-500 transform hover:scale-110 rounded-box -z-0"
+          />
+          <h2 className="m-5 text-gray-400 text-sm">
+            |--- Artist. Commissions are open | Silliest goose of all silly
+            geese | The autism scares the hoes ---|
+          </h2>
+        </div>
+      </div>
+      {/* <hr className="bg-electricPurple mb-10 h-1 rounded-box" /> */}
+      <main className="flex flex-wrap text-black w-full">
+        <div className="flex lg:flex-1 flex-wrap justify-center w-full">
+          <h1 className="m-5 mb-10 text-7xl font-bold leading-snug tracking-wide translate-x-1">
+            Hey, I&apos;m Lewis — a graphic designer and digital illustrator
+            who&apos;s been creating since I could first hold a pencil.
+          </h1>
+          {/* <div className="flex flex-row p-2 mb-2 rounded-box w-full">
+            <div className="card bg-amber text-primary-content flex flex-grow mr-5">
+              <div className="card-body">
+                <h2 className="card-title font-extrabold text-4xl">About Me</h2>
+                <p className="">
+                  Hi, I&apos;m Sanera. I&apos;m a web3 enthusiast and
+                  extraordinaire. Having spent a considerable amount of time
+                  honing my craft and skills, and achieving standard results to
+                  prove my competence and excellence, I&apos;m confident I can
+                  produce excellent results in whatever you might want me to do
+                  for you.
+                </p>
+
+                <h2 className="card-title italic text-xs text-amber mt-4 text-transparent bg-clip-text bg-gradient-to-r from-pink1 to-electricPurple">
+                  What else do I have to say?
+                </h2>
+                <p className="font-semibold italic text-xs leading-relaxed">
+                  &quot;Don&apos;t be afraid to take that{" "}
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink1 to-electricPurple">
+                    leap,{" "}
+                  </span>
+                  Just do whatever it is you&apos;ve always wanted. You&apos;re
+                  actually running out of time so stop wasting it... <br />
+                  GM 🤍&quot;
+                </p>
+              </div>
+            </div>
+            <div className="card flex lg:w-56 w-48 min-w-48 relative overflow-hidden border-amber border-y-2">
+              <div className="card-body p-0 relative h-full">
+                <Image
+                  src="/sanera_bg.jpg"
+                  alt="Sanera"
+                  layout="fill"
+                  objectFit="cover"
+                  priority
+                  className="transition-transform duration-300 transform hover:scale-110"
+                />
+                <div className="absolute top-2 right-2 z-10">
+                  <button className="btn z-20 bg-transparent border-none">
+                    <Image
+                      src="/images-square-fill.svg"
+                      alt="images"
+                      width={20}
+                      height={10}
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div> */}
+
+          <div className="flex flex-row flex-wrap gap-10 lg:gap-32 justify-center mb-14 rounded-box w-full">
+            <div className="flex transition-transform duration-300 transform hover:scale-110 hover:cursor-pointer">
+              <Image src="/image4.jpg" alt="1" width={300} height={50} />
+            </div>
+
+            <div className="flex transition-transform duration-300 transform hover:scale-110 hover:cursor-pointer">
+              <Image src="/image4.jpg" alt="1" width={300} height={50} />
+            </div>
+
+            <div className="flex transition-transform duration-300 transform hover:scale-110 hover:cursor-pointer">
+              <Image src="/image4.jpg" alt="1" width={300} height={50} />
+            </div>
+          </div>
+
+          <div>
+            <h1 className="m-5 mb-10 text-7xl font-bold leading-snug tracking-wide translate-x-1">
+              Hey, I&apos;m Lewis — a graphic designer and digital illustrator
+              who&apos;s been creating since I could first hold a pencil.
+            </h1>
+          </div>
+
+          <div className="flex flex-row p-2 mb-5 rounded-box w-full">
+            <div className="card bg-neonGreen text-primary-content mr-5 flex flex-1">
+              <div className="card-body">
+                <div className="justify-items-center mb-10 font-extrabold">
+                  <h2 className="card-title uppercase font-extrabold text-2xl">
+                    Portfolio
+                  </h2>
+                  <p className="font-extrabold">&</p>
+                  <p className="text-transparent bg-clip-text bg-gradient-to-r from-pink1 to-electricPurple">
+                    resume
+                  </p>
+                </div>
+                <div className="card-actions justify-center">
+                  <div className="btn bg-indigoPurple border-none">
+                    <button
+                      className="btn bg-indigoPurple border-none shadow-md shadow-black text-white uppercase font-bold relative inline-block cursor-pointer transition-transform duration-200 ease-linear transform hover:scale-110 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-pink1 hover:to-amber"
+                      onClick={handlePortfolioClick}
+                    >
+                      View
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              className="card bg-electricPurple relative text-primary-content flex flex-1 transition-transform duration-300 transform hover:scale-110 hover:cursor-pointer hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-pink1 hover:to-amber hover:border-electricPurple"
+              onClick={handleContactClick}
+            >
+              <div className="card-body">
+                <h2 className="card-title font-extrabold text-4xl">CONTACT</h2>
+                <p className="text-xl">Me</p>
+              </div>
+              <Image
+                src="/arrow-square-out.svg"
+                alt="Contact Page"
+                width={20}
+                height={20}
+                className="absolute top-2 right-2 z-10"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* <div className="flex flex-col justify-center items-center w-full lg:w-auto rounded-box p-5">
+          <div className="card bg-amber text-primary-content w-full lg:w-96 mb-5">
+            <div className="card-body items-center">
+              <h2 className="card-title mb-10 font-bold text-2xl">
+                SERVICE
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink1 to-electricPurple">
+                  info
+                </span>
+              </h2>
+              <div className="flex flex-col text-white text-2xl font-bold items-center">
+                <div className="btn bg-indigoPurple border-none mb-10">
+                  <button
+                    onClick={handleServicesClick}
+                    className="btn bg-indigoPurple shadow-md shadow-black border-none text-2xl text-white uppercase font-bold relative inline-block cursor-pointer transition-transform duration-200 ease-linear transform hover:scale-110 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-pink1 hover:to-amber"
+                  >
+                    TWEETS
+                  </button>
+                </div>
+                <div className="btn bg-indigoPurple border-none mb-10">
+                  <button
+                    onClick={handleServicesClick}
+                    className="btn bg-indigoPurple shadow-md shadow-black border-none text-2xl text-white uppercase font-bold relative inline-block cursor-pointer transition-transform duration-200 ease-linear transform hover:scale-110 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-pink1 hover:to-amber"
+                  >
+                    THREADS
+                  </button>
+                </div>
+                <div className="btn bg-indigoPurple border-none mb-10">
+                  <button
+                    onClick={handleServicesClick}
+                    className="btn bg-indigoPurple shadow-md shadow-black border-none text-2xl text-white uppercase font-bold relative inline-block cursor-pointer transition-transform duration-200 ease-linear transform hover:scale-110 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-pink1 hover:to-amber"
+                  >
+                    SPACES & AMAs
+                  </button>
+                </div>
+                <div className="btn bg-indigoPurple border-none mb-10">
+                  <button
+                    onClick={handleServicesClick}
+                    className="btn bg-indigoPurple shadow-md shadow-black border-none text-2xl text-white uppercase font-bold relative inline-block cursor-pointer transition-transform duration-200 ease-linear transform hover:scale-110 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-pink1 hover:to-amber"
+                  >
+                    SPECIAL PACKAGE
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="flex w-full justify-center bg-indigoPurple p-5 rounded-box mb-5 gap-10">
+            <Link
+              href={"https://x.com/SaneraGermaine"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2"
+            >
+              <Image
+                src="/x-logo.svg"
+                alt="images"
+                width={30}
+                height={10}
+                className="transition-transform duration-300 transform hover:scale-110 hover:cursor-pointer"
+              />
+              <p className="font-bold">Twitter</p>
+            </Link>
+            <Link href={""}>
+              <Image
+                src="/instagram-logo.svg"
+                alt="images"
+                width={30}
+                height={10}
+                className="transition-transform duration-300 transform hover:scale-110 hover:cursor-pointer"
+              />
+            </Link>
+            <Link href={""}>
+              <Image
+                src="/whatsapp-logo.svg"
+                alt="images"
+                width={30}
+                height={10}
+                className="transition-transform duration-300 transform hover:scale-110 hover:cursor-pointer"
+              />
+            </Link>
+            <Link
+              href={"https://t.me/Sanera9"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2"
+            >
+              <Image
+                src="/telegram-logo.svg"
+                alt="images"
+                width={30}
+                height={10}
+                className="transition-transform duration-300 transform hover:scale-110 hover:cursor-pointer"
+              />
+              <p className="font-bold">Telegram</p>
+            </Link>
+          </div>
+        </div> */}
+      </main>
+      {isPortfolioModalVisible && (
+        <Modal
+          className="text-3xl border-2 shadow-sm shadow-pink1 border-indigoPurple rounded-box p-6 flex flex-col text-center items-center bg-black bg-opacity-100"
+          content={
+            <div className="flex flex-col items-center">
+              <div className="mb-5">
+                <h1 className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-electricPurple via-pink1 to-amber">
+                  My portfolio&#63; My resume&#63;
+                </h1>
+              </div>
+              <div className="text-sm mb-5">
+                <p>
+                  A portfolio or a resume is something that showcases past works
+                  and efforts made in a particular field to prove competence in
+                  that field.
+                  <br />
+                  <br />
+                  For me, that equates to my X account. Any expertise or
+                  competence you might want to check or analyze is all there for
+                  you to see.
+                  <br />
+                  <br />
+                  See for yourself 👇
+                </p>
+              </div>
+              <Link
+                href={"https://x.com/SaneraGermaine"}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div className="btn bg-indigoPurple border-none">
+                  <button
+                    className="btn bg-indigoPurple border-none text-transparent bg-clip-text bg-gradient-to-r from-pink1 to-amber font-bold relative inline-block cursor-pointer transition-transform duration-200 ease-linear transform hover:scale-110 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-pink1 hover:to-amber"
+                    onClick={handleXClick}
+                  >
+                    Sanera Germaine
+                  </button>
+                </div>
+              </Link>
+            </div>
+          }
+          onClose={() => setIsPortfolioModalVisible(false)}
+        />
+      )}
+      {isServicesModalVisible && (
+        <Modal
+          className="text-3xl border-2 shadow-sm shadow-pink1 border-indigoPurple rounded-box p-6 flex flex-col text-center items-center bg-black bg-opacity-100"
+          content={
+            <div className="flex flex-col items-center text-lg">
+              <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-electricPurple via-pink1 to-amber">
+                <h2>Interested in my services?</h2>
+              </span>{" "}
+              <br />
+              Reach out to me on the contact page
+            </div>
+          }
+          onClose={() => setIsServicesModalVisible(false)}
+        />
+      )}
+    </div>
+  );
+};
+
+export default Home;
