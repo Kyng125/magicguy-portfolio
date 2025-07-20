@@ -34,12 +34,12 @@ export default function Landing() {
           {/* Profile image with hover effect */}
           <div className="relative z-10">
             <Image
-              src="/LuLu2.png"
-              alt="Click to enter"
+              src="/LuLu2.webp"
+              alt="Lulu"
               width={300}
               height={300}
               priority
-              className={`rounded-full border-4 border-white/10 transition-all duration-500 ${isHovering ? "scale-105 border-electricBlue/50 shadow-2xl shadow-vividMagenta/30" : "scale-100"}`}
+              className={`rounded-full  transition-all duration-500 ${isHovering ? "scale-105 border-electricBlue/50 shadow-2xl shadow-vividMagenta/30" : "scale-100"}`}
             />
           </div>
           
