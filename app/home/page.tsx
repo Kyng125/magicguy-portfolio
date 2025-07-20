@@ -198,63 +198,70 @@ const Home = () => {
       </section>
 
       {/* About Section */}
-      <section
+      <div
         id="section2"
+        className="flex flex-col lg:flex-row items-center justify-between gap-8 mt-24 mb-20 px-4 md:px-8"
         ref={section2Ref}
-        className="py-16 px-4 md:px-8 max-w-7xl mx-auto"
       >
-        <div className="flex flex-col lg:flex-row gap-12 items-center">
-          {/* Text container */}
-          <div
-            ref={textContainerRef}
-            className="w-full lg:w-1/2 h-[400px] flex items-center p-8 bg-gradient-to-br from-black/30 to-black/50 rounded-2xl backdrop-blur-sm border border-white/10 overflow-hidden transition-all duration-500"
+        {/* Text container with dynamic scaling */}
+        <div
+          ref={textContainerRef}
+          className="w-full lg:w-1/2 h-[300px] lg:h-[400px] flex items-center p-6 bg-black/10 rounded-3xl backdrop-blur-sm border border-white/10 overflow-hidden transition-all duration-500"
+          style={{ minHeight: "300px" }}
+        >
+          <p
+            className={`font-bold leading-relaxed tracking-wide ${
+              fontSizePx > 36
+                ? "lg:text-4xl"
+                : fontSizePx > 24
+                ? "lg:text-2xl"
+                : "lg:text-xl"
+            } text-white/90 text-scale-transition`}
           >
-            <p
-              className={`font-medium leading-relaxed tracking-wide ${pxToTailwind(
-                fontSizePx
-              )} text-white/90 transition-all duration-300`}
-            >
-              {typedText}
-              <span className="ml-1.5 inline-block w-2 h-8 bg-gradient-to-b from-vividMagenta to-electricBlue animate-pulse" />
-            </p>
-          </div>
-
-          {/* Image slideshow */}
-          <div className="w-full lg:w-1/2 relative group">
-            <div className="relative overflow-hidden rounded-2xl shadow-2xl shadow-electricBlue/20">
-              <Image
-                src={images[currentImageIndex]}
-                alt={`Artwork ${currentImageIndex + 1}`}
-                width={800}
-                height={600}
-                className="w-full h-auto object-cover transition-all duration-700 group-hover:scale-105"
-              />
-
-              {/* Navigation dots */}
-              <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-2">
-                {images.map((_, i) => (
-                  <button
-                    key={i}
-                    onClick={() => setCurrentImageIndex(i)}
-                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                      currentImageIndex === i
-                        ? "bg-gradient-to-r from-vividMagenta to-electricBlue scale-125"
-                        : "bg-white/30"
-                    }`}
-                    aria-label={`View slide ${i + 1}`}
-                  />
-                ))}
-              </div>
-
-              {/* Hover overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
-            </div>
-            <p className="mt-4 text-center text-white/70 italic">
-              {currentImageIndex + 1} / {images.length}
-            </p>
-          </div>
+            {typedText}
+            <span className="ml-1 animate-pulse bg-gradient-to-r from-vividMagenta to-electricBlue h-6 w-1 inline-block align-middle"></span>
+          </p>
         </div>
-      </section>
+
+        {/* Image slideshow container */}
+        <div className="w-full lg:w-1/2 relative group">
+          <div className="relative overflow-hidden rounded-3xl shadow-2xl shadow-electricBlue/20">
+            <Image
+              src={images[currentImageIndex]}
+              alt={`Artwork ${currentImageIndex + 1}`}
+              width={600}
+              height={400}
+              key={currentImageIndex}
+              className="w-full h-auto object-cover animate-fadeIn transform transition-all duration-700 group-hover:scale-105"
+            />
+
+            {/* Slideshow navigation indicators */}
+            <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
+              {images.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentImageIndex(index)}
+                  className={`h-2 rounded-full transition-all duration-300 ${
+                    currentImageIndex === index
+                      ? "w-8 bg-gradient-to-r from-vividMagenta to-electricBlue"
+                      : "w-2 bg-white/30"
+                  }`}
+                  aria-label={`View slide ${index + 1}`}
+                />
+              ))}
+            </div>
+
+            {/* Decorative frame elements */}
+            <div className="absolute inset-0 border-2 border-transparent group-hover:border-white/20 pointer-events-none transition-all duration-500"></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/30 pointer-events-none"></div>
+          </div>
+
+          {/* Caption text */}
+          <p className="mt-4 text-center text-white/70 text-sm italic">
+            {`Artwork ${currentImageIndex + 1} of ${images.length}`}
+          </p>
+        </div>
+      </div>
 
       {/* Action Cards */}
       <section className="py-16 px-4 md:px-8 max-w-7xl mx-auto">
