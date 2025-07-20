@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import emailjs from "emailjs-com";
+import emailjs from "@emailjs/browser";
 import Footer from "@/app/components/Footer";
 import { ArrowLeft } from "lucide-react";
 
@@ -90,7 +90,7 @@ const Contact = () => {
           </h1>
           <p className="text-lg text-white/80 max-w-2xl mx-auto">
             Have a project in mind or want to discuss potential collaboration?
-            Fill out the form below and I'll get back to you as soon as
+            Fill out the form below and I&apos;ll get back to you as soon as
             possible.
           </p>
         </div>

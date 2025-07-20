@@ -134,7 +134,7 @@ const Footer = () => {
         {/* Newsletter (optional) */}
         <div className="mb-12 p-6 bg-gray-900 rounded-lg">
           <h4 className="text-xl font-bold mb-2 text-center text-transparent bg-clip-text bg-gradient-to-r from-vividMagenta via-vividMagenta to-electricBlue">
-            Let's Connect
+            Let&apos;s Connect
           </h4>
           <p className="text-center mb-4">
             Just checking my work out? Drop your email so I can say hi.

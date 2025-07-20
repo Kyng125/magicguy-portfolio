@@ -50,6 +50,7 @@ const Home = () => {
 
   // Intersection Observer for section visibility
   useEffect(() => {
+    const currentRef = section2Ref.current;
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting && !isSectionVisible) {
@@ -57,19 +58,19 @@ const Home = () => {
           setTypedText("");
           setCurrentIndex(0);
           setCurrentImageIndex(0);
-          setFontSizePx(48); // Reset font size
+          // setFontSizePx(48); // Reset font size
         }
       },
       { threshold: 0.1 }
     );
 
-    if (section2Ref.current) {
-      observer.observe(section2Ref.current);
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (section2Ref.current) {
-        observer.unobserve(section2Ref.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, [isSectionVisible]);
@@ -167,7 +168,7 @@ const Home = () => {
 
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight md:leading-none tracking-tight px-4 mb-24 text-center">
           <span className="bg-gradient-to-r from-vividMagenta to-electricBlue bg-clip-text text-transparent">
-            Hey, I'm Lewis
+            Hey, I&apos;m Lewis
           </span>
           <br />
           Graphic designer & digital illustrator creating magic since childhood.
@@ -290,7 +291,7 @@ const Home = () => {
               <div className="h-full bg-black rounded-[calc(0.75rem-1px)] p-6 flex flex-col">
                 <h3 className="text-3xl font-bold mb-4">Contact</h3>
                 <p className="text-white/70 mb-6">
-                  Ready to collaborate? Let's bring your ideas to life.
+                  Ready to collaborate? Let&apos;s bring your ideas to life.
                 </p>
                 <div className="mt-auto">
                   <button

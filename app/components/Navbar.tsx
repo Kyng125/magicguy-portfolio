@@ -189,8 +189,8 @@ const Navbar = () => {
                 </h2>
                 <div className="space-y-4 text-white/80">
                   <p>
-                    Hey, I'm Lewis — a graphic designer and digital illustrator
-                    who's been creating since I could first hold a pencil.
+                    Hey, I&apos;m Lewis — a graphic designer and digital illustrator
+                    who&apos;s been creating since I could first hold a pencil.
                   </p>
                   <p>
                     I started with doodles in the margins of school books,
@@ -204,7 +204,7 @@ const Navbar = () => {
                     modern tools.
                   </p>
                   <p>
-                    What makes my style different? It's flexible. I believe good
+                    What makes my style different? It&apos;s flexible. I believe good
                     design should speak to its purpose — so I adapt to what each
                     project needs.
                   </p>
