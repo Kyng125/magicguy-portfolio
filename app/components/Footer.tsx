@@ -59,7 +59,7 @@ const Footer = () => {
             </h4>
             <ul className="space-y-2">
               <li>
-                <Link href="/" className="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-vividMagenta hover:to-electricBlue transition-all duration-300">
+                <Link href="/home" className="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-vividMagenta hover:to-electricBlue transition-all duration-300">
                   Home
                 </Link>
               </li>
@@ -81,7 +81,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/contact"
+                  href="/home/contact"
                   className="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-vividMagenta hover:to-electricBlue transition-all duration-300"
                 >
                   Contact

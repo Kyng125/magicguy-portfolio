@@ -34,7 +34,7 @@ export default function Landing() {
           {/* Profile image with hover effect */}
           <div className="relative z-10">
             <Image
-              src="/LuLu2.webp"
+              src="/LuLu1.jpg"
               alt="Lulu"
               width={300}
               height={300}

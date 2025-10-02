@@ -24,11 +24,12 @@ const Home = () => {
   // Slideshow state
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const images = [
-    "/image1.jpg",
-    "/image2.jpg",
-    "/image3.jpg",
-    "/image5.jpg",
-    "/image6.jpg"
+    "/image (1).jpg",
+    "/image (2).jpg",
+    "/image (3).jpg",
+    "/image (4).jpg",
+    "/image (5).jpg",
+    "/image (6).jpg"
   ];
 
   const [fontSizePx, setFontSizePx] = useState(48);

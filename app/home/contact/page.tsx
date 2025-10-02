@@ -33,9 +33,9 @@ const Contact = () => {
     setIsSending(true);
 
     try {
-      const serviceId = "service_t0w0l4n";
-      const templateId = "template_pp1ypka";
-      const userId = "yFb4VMQcszaTUqa5o";
+      const serviceId = "service_d7iw7e8";
+      const templateId = "template_kw5e2wi";
+      const userId = "-_mdA78XWYPlPgyTt";
 
       await emailjs.send(serviceId, templateId, formData, userId);
 
